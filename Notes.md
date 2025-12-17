@@ -24,6 +24,15 @@
 ## mineralManager
 - getMinerals
     - fetch list of minerals
+
+## PurchaseManager
+- PurchaseMinerals()
+    - IF check - if mineral does not exist in the api database for colonyMineral or facilityMineral stocks
+        - POST transientState
+    - ELSE
+        - PUT transientState
+            1. update facilityMineral stock
+            2. update colonyMineral stock
     
 ## Components
 
@@ -97,6 +106,13 @@ create display of colony name and inventory
     1. get SpaceCart element 
     1. build html for cart display
     1. update innerhtml of the element
+
+### PurchaseButton 
+create button to purchase minerals
+- add "click" event that will call PurchaseManager()
+- PurchaseButton()
+    - build button html
+    - return html
 
 ### Event Listeners
 trigger a change or click event when selecting options to store in the transient state and to purchase minerals
