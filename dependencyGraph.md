@@ -7,24 +7,26 @@ graph TD;
     Main-->FacilitySelector
     Main-->FacilityMineralSelector
     Main-->SpaceCart
-    Main-->PurchaseButton
     GovernorSelector-->GovernorManager
     GovernorSelector-->TransientState
+    GovernorSelector-->ColonyInventory
+    GovernorSelector-->FacilitySelector
     ColonyInventory-->ColonyManager
     ColonyInventory-->TransientState
     FacilitySelector-->FacilityManager
     FacilitySelector-->TransientState
+    FacilitySelector-->FacilityMineralSelector
     FacilityMineralSelector-->FacilityManager
-    FacilityMineralSelector-->MineralManager
     FacilityMineralSelector-->TransientState
+    FacilityMineralSelector-->SpaceCart
     SpaceCart-->TransientState
-    PurchaseButton-->PurchaseManager
-    PurchaseManager-->TransientState
+    SpaceCart-->FacilityMineralSelector
+    SpaceCart-->ColonyInventory
+    TransientState-->PurchaseManager
     GovernorManager-->Database
     ColonyManager-->Database
     FacilityManager-->Database
     MineralManager-->Database
     PurchaseManager-->Database
     
-
 ```
