@@ -23,18 +23,20 @@ const ExomineHTML = () => {
             </div>
         </section>
         <section class='inv-colony right'>
-            *** render COLONY MINERALS ***
+            <div id='renderColonyMinerals'>
+                *** render COLONY MINERALS ***
+            </div>
         </section>
     </article>
     
     <article id='MinSelCart' class='bottom'>
         <section class='selector-mineral left'>
-            <div class='selector--min'>
+            <div id='renderFacilityMineralSelector' class='selector--min'>
                 *** render MINERAL SELECTOR ***
             </div>
         </section>
         <section class='space-cart right'>
-            <div class='cart'>
+            <div id='renderSpaceCart' class='cart'>
                 *** render SPACE CART ***
             </div>
         </section>
@@ -48,3 +50,7 @@ const renderMain = () => {
 }
 
 renderMain()
+
+renderColonyInventory()
+renderFacilityMineralSelector()
+renderSpaceCart()
