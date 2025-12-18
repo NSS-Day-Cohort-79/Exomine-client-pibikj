@@ -26,7 +26,6 @@ graph TD;
     GovernorManager-->Database
     ColonyManager-->Database
     FacilityManager-->Database
-    MineralManager-->Database
     PurchaseManager-->Database
     
 ```
