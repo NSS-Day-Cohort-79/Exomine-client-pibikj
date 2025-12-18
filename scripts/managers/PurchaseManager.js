@@ -30,10 +30,9 @@ export const PurchaseMineralsManager = async (state) => {
             colonyId: state.colonyId,
             mineralId: state.mineralId,
             stock: colonyArray[0].stock + 1,
-            id: colonyArray[0].id
         }
         // PUT entry to colonyMinerals
-        const updateColonyResponse = await fetch("http://localhost:8088/colonyMinerals", {
+        const updateColonyResponse = await fetch(`http://localhost:8088/colonyMinerals/${colonyArray[0].id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -50,11 +49,10 @@ export const PurchaseMineralsManager = async (state) => {
         facilityId: state.facilityId,
         mineralId: state.mineralId,
         stock: facilityArray[0].stock - 1,
-        id: facilityArray[0].id
     }
 
     // PUT update facilityMineral stock
-    const updateFacilityResponse = await fetch("http://localhost:8088/facilityMinerals", {
+    const updateFacilityResponse = await fetch(`http://localhost:8088/facilityMinerals/${facilityArray[0].id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
