@@ -4,6 +4,10 @@
 // import render facility mineral selector
 // import render space cart
 
+// here is the test to check if code runs, run it in serve and check console for an array
+import { getColonyMineral } from "./managers/ColonyManager.js"
+console.log(getColonyMineral())
+
 const mainContainer = document.querySelector("#container")
 
 const ExomineHTML = () => {

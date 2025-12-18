@@ -5,11 +5,8 @@ export const getColonies = async () => {
 }
 
 export const getColonyMineral = async (colonyId) => {
-    const response = await fetch("http://localhost:8088/colonyMinerals?_expand=mineral")
+    const response = await fetch(`http://localhost:8088/colonyMinerals?_expand=mineral&colonyId=${colonyId}`)
     const colonyMinerals = await response.json()
-    for (const colony of colonyMinerals) {
-        if (colony.colonyId === colonyId) {
-            return colony
-        }
-    }
+
+    return colonyMinerals
 }
