@@ -8,7 +8,6 @@ Table Governors {
 Table Colonies {
     id int [pk, increment]
     name varchar
-    governorId int
 }
 
 Table Facilities {
