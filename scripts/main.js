@@ -5,8 +5,14 @@
 // import render space cart
 
 // here is the test to check if code runs, run it in serve and check console for an array
-import { getColonyMineral } from "./managers/ColonyManager.js"
-console.log(getColonyMineral())
+import { PurchaseMineralsManager } from "./managers/PurchaseManager.js"
+const state = {
+    mineralId: 1,
+    colonyId: 2,
+    facilityId: 1
+}
+
+console.log(PurchaseMineralsManager(state))
 
 const mainContainer = document.querySelector("#container")
 
@@ -55,6 +61,6 @@ const renderMain = () => {
 
 renderMain()
 
-renderColonyInventory()
-renderMineralSelector()
-renderSpaceCart()
+// renderColonyInventory()
+// renderMineralSelector()
+// renderSpaceCart()
