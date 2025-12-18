@@ -1,26 +1,21 @@
+// import { purchaseMineralsManager } from "./PurchaseManager.js"
+
 const state = {
-
+    mineralId: 0,
+    colonyId: 0,
+    facilityId: 0
 }
 
-export const setFacility = (facilityId) => {
-    state.selectedFacility = facilityId
-    document.dispatchEvent(new CustomEvent("stateChanged"))
-}
+export const setColonyId = (id) => state.colonyId = id
+export const getColonyId = () => state.colonyId
 
-export const purchaseMineral = () => {
-    /*
-        Does the chosen governor's colony already own some of this mineral?
-            - If yes, what should happen?
-            - If no, what should happen?
+export const setFacilityId = (id) => state.facilityId = id
+export const getFacilityId = () => state.facilityId
 
-        Defining the algorithm for this method is traditionally the hardest
-        task for teams during this group project. It will determine when you
-        should use the method of POST, and when you should use PUT.
+export const setMineralId = (id) => state.mineralId = id
+export const getMineralId = () => state.mineralId
 
-        Only the foolhardy try to solve this problem with code.
-    */
-
-
-
-    document.dispatchEvent(new CustomEvent("stateChanged"))
+export const purchaseMinerals = async () => {
+    await purchaseMineralsManager(structuredClone(state))
+    state.mineralId = 0
 }
