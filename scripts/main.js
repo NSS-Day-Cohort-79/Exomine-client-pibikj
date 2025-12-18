@@ -52,5 +52,5 @@ const renderMain = () => {
 renderMain()
 
 renderColonyInventory()
-renderFacilityMineralSelector()
+renderMineralSelector()
 renderSpaceCart()
