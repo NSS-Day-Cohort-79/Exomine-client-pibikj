@@ -1,4 +1,209 @@
 {
-    "minerals":[],
-    "facilityMinerals": []
+    "governors": [
+        {
+            "id": 1,
+            "name": "Marcus Steele",
+            "isActive": true,
+            "colonyId": 2
+        },
+        {
+            "id": 2,
+            "name": "Elena Voss",
+            "isActive": true,
+            "colonyId": 2
+        },
+        {
+            "id": 3,
+            "name": "Viktor Frost",
+            "isActive": true,
+            "colonyId": 1
+        },
+        {
+            "id": 4,
+            "name": "Aria Chen",
+            "isActive": false,
+            "colonyId": 3
+        },
+        {
+            "id": 5,
+            "name": "Dmitri Volkov",
+            "isActive": true,
+            "colonyId": 3
+        },
+        {
+            "id": 6,
+            "name": "Zara Malik",
+            "isActive": false,
+            "colonyId": 4
+        },
+        {
+            "id": 7,
+            "name": "Theron Blake",
+            "isActive": true,
+            "colonyId": 4
+        }
+    ],
+    "colonies": [
+        {
+            "id": 1,
+            "name": "Terra Nova"
+        },
+        {
+            "id": 2,
+            "name": "Crimson Desert"
+        },
+        {
+            "id": 3,
+            "name": "Galacius Prime"
+        },
+        {
+            "id": 1,
+            "name": "Verdant Echo"
+        }
+    ],
+    "facilities": [
+        {
+            "id": 1,
+            "name": "Central Mining Hub",
+            "isActive": true
+        },
+        {
+            "id": 2,
+            "name": "Refinery Station Alpha",
+            "isActive": true
+        },
+        {
+            "id": 3,
+            "name": "Research Laboratory",
+            "isActive": true
+        },
+        {
+            "id": 4,
+            "name": "Storage Depot",
+            "isActive": false
+        },
+        {
+            "id": 5,
+            "name": "Transport Terminal",
+            "isActive": true
+        }
+    ],
+    "minerals":[
+        {
+            "id": 1,
+            "name": "Titanium Ore"
+        },
+        {
+            "id": 2,
+            "name": "Crystalline Carbon"
+        },
+        {
+            "id": 3,
+            "name": "Platinum Deposits"
+        },
+        {
+            "id": 4,
+            "name": "Iron Veins"
+        },
+        {
+            "id": 5,
+            "name": "Cobalt Clusters"
+        },
+        {
+            "id": 6,
+            "name": "Gold Nuggets"
+        },
+        {
+            "id": 7,
+            "name": "Silicon Crystals"
+        },
+        {
+            "id": 8,
+            "name": "Uranium Ore"
+        },
+        {
+            "id": 9,
+            "name": "Copper Deposits"
+        },
+        {
+            "id": 10,
+            "name": "Emerald Shards"
+        }
+    ],
+    "facilityMinerals": [
+        {
+            "id": 1,
+            "facilityId": 1,
+            "mineralId": 1,
+            "stock": 50
+        },
+        {
+            "id": 2,
+            "facilityId": 1,
+            "mineralId": 2,
+            "stock": 30
+        },
+        {
+            "id": 3,
+            "facilityId": 2,
+            "mineralId": 3,
+            "stock": 45
+        },
+        {
+            "id": 4,
+            "facilityId": 2,
+            "mineralId": 4,
+            "stock": 14
+        },
+        {
+            "id": 5,
+            "facilityId": 3,
+            "mineralId": 5,
+            "stock": 0
+        },
+        {
+            "id": 6,
+            "facilityId": 3,
+            "mineralId": 6,
+            "stock": 12
+        },
+        {
+            "id": 7,
+            "facilityId": 4,
+            "mineralId": 7,
+            "stock": 98
+        },
+        {
+            "id": 8,
+            "facilityId": 5,
+            "mineralId": 8,
+            "stock": 67
+        },
+        {
+            "id": 9,
+            "facilityId": 5,
+            "mineralId": 9,
+            "stock": 56
+        },
+        {
+            "id": 10,
+            "facilityId": 5,
+            "mineralId": 10,
+            "stock": 14
+        }
+    ],
+    "colonyMinerals": [
+        {
+            "id": 1,
+            "colonyId": 1,
+            "mineralId": 5,
+            "stock": 4
+        },
+        {
+            "id": 2,
+            "colonyId": 1,
+            "mineralId": 7,
+            "stock": 8
+        }
+    ]
 }
