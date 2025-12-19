@@ -4,20 +4,6 @@
 // import render facility mineral selector
 // import render space cart
 
-// here is the test to check if code runs, run it in serve and check console for an array
-import { setColonyId, setMineralId, setFacilityId, purchaseMinerals, getColonyId, getMineralId, getFacilityId } from "./utilities/TransientState.js"
-const test = async () => {
-setColonyId(1)
-console.log(getColonyId())
-setMineralId(1)
-console.log(getMineralId())
-setFacilityId(1)
-console.log(getFacilityId())
-await purchaseMinerals()
-console.log(getMineralId())
-}
-test()
-
 const mainContainer = document.querySelector("#container")
 
 const ExomineHTML = () => {
@@ -71,6 +57,20 @@ renderMain()
 
 
 /* -------------------------------------- */
-/* test for governor manager */
-import { GovernorManager } from "./managers/GovernorManager.js"
-console.log(await GovernorManager())
+/* test for TransientState */
+// run serve and json-server
+// check that console log matches the input to the setters
+// check that colonyMinerals gets updated stock and that facilityMinerals gets updated stock
+import { setColonyId, setMineralId, setFacilityId, purchaseMinerals, getColonyId, getMineralId, getFacilityId } from "./utilities/TransientState.js"
+const test = async () => {
+setColonyId(1)
+console.log(getColonyId())
+setMineralId(1)
+console.log(getMineralId())
+setFacilityId(1)
+console.log(getFacilityId())
+await purchaseMinerals()
+console.log(getMineralId())
+}
+test()
+
