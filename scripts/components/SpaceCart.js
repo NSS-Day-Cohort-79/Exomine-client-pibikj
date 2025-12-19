@@ -23,9 +23,9 @@ export const renderSpaceCart = (mineralName, facilityName) => {
         html += `<div id="spaceCartItem">
                 <p>1 ton of ${mineralName} from ${facilityName}</p>
         </div>
-        <button id="purchase-button" enable>Purchase Mineral</button>`
+        <button id="purchase-button">Purchase Mineral</button>`
     } else if (mineralName === undefined) {
-        html += `<button id="purchase-button" disable>Purchase Mineral</button>`
+        html += `<button id="purchase-button" disabled>Purchase Mineral</button>`
     }
 
     spaceCart.innerHTML = html
