@@ -1,6 +1,6 @@
 // import governor selector
 // import facility selector
-// import render colony inventory
+import { renderColonyInventory } from "./components/ColonyInventory.js"
 // import render facility mineral selector
 // import render space cart
 
@@ -24,7 +24,6 @@ const ExomineHTML = () => {
         </section>
         <section class='inv-colony right'>
             <div id='renderColonyMinerals'>
-                *** render COLONY MINERALS ***
             </div>
         </section>
     </article>
@@ -40,37 +39,20 @@ const ExomineHTML = () => {
                 *** render SPACE CART ***
             </div>
         </section>
-        
     </article>
     `
 }
 
-const renderMain = () => {
-    mainContainer.innerHTML = ExomineHTML()
+const renderMain = async () => {
+    mainContainer.innerHTML = await ExomineHTML()
+    renderColonyInventory()
 }
 
 renderMain()
 
-// renderColonyInventory()
 // renderMineralSelector()
 // renderSpaceCart()
 
 
 /* -------------------------------------- */
-/* test for TransientState */
-// run serve and json-server
-// check that console log matches the input to the setters
-// check that colonyMinerals gets updated stock and that facilityMinerals gets updated stock
-import { setColonyId, setMineralId, setFacilityId, purchaseMinerals, getColonyId, getMineralId, getFacilityId } from "./utilities/TransientState.js"
-const test = async () => {
-setColonyId(1)
-console.log(getColonyId())
-setMineralId(1)
-console.log(getMineralId())
-setFacilityId(1)
-console.log(getFacilityId())
-await purchaseMinerals()
-console.log(getMineralId())
-}
-test()
 

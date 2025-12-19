@@ -5,7 +5,7 @@ export const getColonies = async () => {
 }
 
 export const getColonyMineral = async (colonyId) => {
-    const response = await fetch(`http://localhost:8088/colonyMinerals?_expand=mineral&colonyId=${colonyId}`)
+    const response = await fetch(`http://localhost:8088/colonyMinerals?_expand=mineral&_expand=colony&colonyId=${colonyId}`)
     const colonyMinerals = await response.json()
 
     return colonyMinerals
