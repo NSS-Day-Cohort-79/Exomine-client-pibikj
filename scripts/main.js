@@ -1,6 +1,6 @@
 // import governor selector
 // import facility selector
-// import render colony inventory
+import { renderColonyInventory } from "./components/ColonyInventory.js"
 // import render facility mineral selector
 // import render space cart
 
@@ -51,7 +51,7 @@ const renderMain = () => {
 
 renderMain()
 
-// renderColonyInventory()
+renderColonyInventory()
 // renderMineralSelector()
 // renderSpaceCart()
 
