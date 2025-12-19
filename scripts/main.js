@@ -24,7 +24,6 @@ const ExomineHTML = () => {
         </section>
         <section class='inv-colony right'>
             <div id='renderColonyMinerals'>
-                *** render COLONY MINERALS ***
             </div>
         </section>
     </article>
@@ -45,13 +44,13 @@ const ExomineHTML = () => {
     `
 }
 
-const renderMain = () => {
-    mainContainer.innerHTML = ExomineHTML()
+const renderMain = async () => {
+    mainContainer.innerHTML = await ExomineHTML()
+    renderColonyInventory()
 }
 
 renderMain()
 
-renderColonyInventory()
 // renderMineralSelector()
 // renderSpaceCart()
 

@@ -15,12 +15,12 @@ export const renderColonyInventory = async () => {
 
         const colonyMineralsMap = colonyMinerals.map((colonyMineral) => {
             colonyName = colonyMineral.colony.name
-            return `<li>${colonyMineral.stock} tons of ${colonyMineral.mineral.name}</li>`
+            return `<li data-stock="${colonyMineral.stock}" data-mineral="${colonyMineral.mineral.name}" data-colonyname="${colonyMineral.colony.name}">${colonyMineral.stock} tons of ${colonyMineral.mineral.name}</li>`
         })
 
         colonyInventoryHTML += `
-            <h2>${colonyName} Minerals</h2>
-            <ul>
+            <h2 class="colony-mineral-header">${colonyName} Minerals</h2>
+            <ul class="colony-minerals-list">
         `
         colonyInventoryHTML += colonyMineralsMap.join("")
         colonyInventoryHTML += `</ul>`
