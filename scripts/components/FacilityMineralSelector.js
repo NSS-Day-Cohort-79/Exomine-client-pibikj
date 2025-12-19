@@ -15,7 +15,7 @@ const handleFacilityMineralOption = (changeEvent) => {
 export const renderMineralSelector = async () => {
     document.addEventListener("change", handleFacilityMineralOption)
     const mineralListId = document.querySelector("#renderFacilityMineralSelector")
-    //setFacilityId(1)
+    setFacilityId(1)
     const facilityId = getFacilityId()
     let html = "<h2>Facility Minerals</h2>"
 

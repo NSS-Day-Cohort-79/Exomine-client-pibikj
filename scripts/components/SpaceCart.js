@@ -4,11 +4,11 @@ import { renderColonyInventory } from "./ColonyInventory.js"
 
 
 const handlePurchaseMinerals = (clickEvent) => {
-    if (clickEvent.target === "enable") {
+    if (clickEvent.target.disabled === false && clickEvent.target.id === "purchase-button") {
         purchaseMinerals()
-        renderMineralSelector()
         renderColonyInventory()
         renderSpaceCart()
+        renderMineralSelector()
     }
 }
 
