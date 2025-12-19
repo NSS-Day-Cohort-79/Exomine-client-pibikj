@@ -1,5 +1,5 @@
-// import governor selector
-import { FacilitySelector, enableFacilitySelector } from "./components/FacilitySelector.js"
+import { GovernorSelector } from "./components/GovernorSelector.js"
+import { FacilitySelector } from "./components/FacilitySelector.js"
 import { renderColonyInventory } from "./components/ColonyInventory.js"
 // import render facility mineral selector
 // import render space cart
@@ -7,7 +7,7 @@ import { renderColonyInventory } from "./components/ColonyInventory.js"
 const mainContainer = document.querySelector("#container")
 
 const ExomineHTML = async () => {
-    // const governorSelectorHTML = GovernorSelector()
+    const governorSelectorHTML = await GovernorSelector()
     const facilitySelectorHTML = await FacilitySelector()
 
     return `
@@ -16,7 +16,7 @@ const ExomineHTML = async () => {
     <article id='GovFacSelector' class='selector-drop-down'>
         <section class='selector-govfac left'>
             <div class='selector--gov div-govfac'>
-                *** GOVERNOR SELECTOR ***
+                ${governorSelectorHTML}
             </div>
             <div class='selector--fac div-govfac'>
                 ${facilitySelectorHTML}
@@ -43,17 +43,11 @@ const ExomineHTML = async () => {
     `
 }
 
-const renderMain = async async () => {
-    mainContainer.innerHTML = await await ExomineHTML()
+const renderMain = async () => {
+    mainContainer.innerHTML = await ExomineHTML()
     renderColonyInventory()
-    enableFacilitySelector()
+    // renderMineralSelector()
+    // renderSpaceCart()
 }
 
 renderMain()
-
-// renderMineralSelector()
-// renderSpaceCart()
-
-
-/* -------------------------------------- */
-

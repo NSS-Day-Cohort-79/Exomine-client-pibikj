@@ -1,13 +1,15 @@
 import { getGovernors } from "../managers/GovernorManager.js"
 import { setColonyId } from "../utilities/TransientState.js"
-// import { renderMineralSelector } from "../components/FacilityMineralSelector.js"
+import { renderColonyInventory } from "../components/ColonyInventory.js"
+import { enableFacilitySelector } from "../components/FacilitySelector.js"
 
 // add "change" event listener
 document.addEventListener("change", (event) => {
     if (event.target.id === "governor-selector") {
         const selectedId = parseInt(event.target.value)
         setColonyId(selectedId)
-        // renderMineralSelector()
+        renderColonyInventory()
+        enableFacilitySelector()
     }
 })
 
