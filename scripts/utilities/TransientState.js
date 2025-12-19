@@ -1,4 +1,4 @@
-import { purchaseMineralsManager } from "../managers/PurchaseManager.js"
+import { PurchaseMineralsManager } from "../managers/PurchaseManager.js"
 
 const state = {
     mineralId: 0,
@@ -16,6 +16,6 @@ export const setMineralId = (id) => state.mineralId = id
 export const getMineralId = () => state.mineralId
 
 export const purchaseMinerals = async () => {
-    await purchaseMineralsManager(structuredClone(state))
+    await PurchaseMineralsManager(structuredClone(state))
     state.mineralId = 0
 }

@@ -5,6 +5,18 @@
 // import render space cart
 
 // here is the test to check if code runs, run it in serve and check console for an array
+import { setColonyId, setMineralId, setFacilityId, purchaseMinerals, getColonyId, getMineralId, getFacilityId } from "./utilities/TransientState.js"
+const test = async () => {
+setColonyId(1)
+console.log(getColonyId())
+setMineralId(1)
+console.log(getMineralId())
+setFacilityId(1)
+console.log(getFacilityId())
+await purchaseMinerals()
+console.log(getMineralId())
+}
+test()
 
 const mainContainer = document.querySelector("#container")
 
