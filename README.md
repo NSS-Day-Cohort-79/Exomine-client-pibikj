@@ -10,12 +10,14 @@ An in-depth paragraph about your project and overview of use.
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Node
+* JSON server
 
 ### Installing
 
-* How/where to download your program
+* [Exomine - Mining Marketplace](https://github.com/NSS-Day-Cohort-79/Exomine-client-pibikj)
+* Clone the repository
+* In terminal - access the repository directory
 * Any modifications needed to be made to files/folders
 
 ### Executing program
@@ -37,8 +39,9 @@ command to run if program contains helper info
 
 Contributors names and contact info
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+* [Cory Drumright](https://github.com/cmdrumright)
+* [Jack Gardner](https://github.com/jackgardner99)
+* [Larissa Ferreira](https://github.com/larisssssa)
 
 ## Version History
 
