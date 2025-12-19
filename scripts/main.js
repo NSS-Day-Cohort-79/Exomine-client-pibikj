@@ -39,7 +39,6 @@ const ExomineHTML = () => {
                 *** render SPACE CART ***
             </div>
         </section>
-        
     </article>
     `
 }
@@ -56,20 +55,4 @@ renderMain()
 
 
 /* -------------------------------------- */
-/* test for TransientState */
-// run serve and json-server
-// check that console log matches the input to the setters
-// check that colonyMinerals gets updated stock and that facilityMinerals gets updated stock
-import { setColonyId, setMineralId, setFacilityId, purchaseMinerals, getColonyId, getMineralId, getFacilityId } from "./utilities/TransientState.js"
-const test = async () => {
-setColonyId(1)
-console.log(getColonyId())
-setMineralId(1)
-console.log(getMineralId())
-setFacilityId(1)
-console.log(getFacilityId())
-await purchaseMinerals()
-console.log(getMineralId())
-}
-test()
 
