@@ -1,13 +1,15 @@
 import { getFacilities } from "../managers/FacilityManager.js"
+import { setFacilityId } from "../utilities/TransientState.js"
+// import { renderMineralSelector } from "../components/FacilityMineralSelector.js"
 
 // add "change" event listener
 document.addEventListener("change", (event) => {
     if (event.target.id === "facility-selector") {
         const selectedId = parseInt(event.target.value)
+        setFacilityId(selectedId)
+        // renderMineralSelector()
     }
 })
-//         call setFacilityId from transientState
-//         call renderMineralSelector() from FacilityMineralSelector
 
 // create a selection dropdown that lists the mining facilities
 export const FacilitySelector = async () => {
