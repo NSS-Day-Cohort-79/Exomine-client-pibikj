@@ -13,6 +13,9 @@ const state = {
 }
 
 console.log(PurchaseMineralsManager(state))
+import { getColonyMineral } from "./managers/ColonyManager.js"
+console.log(getColonyMineral())
+
 import { getFacilityMinerals } from "./managers/FacilityManager.js"
 import { getFacility } from "./managers/FacilityManager.js"
 console.log(await getFacilityMinerals(1))
@@ -68,3 +71,9 @@ renderMain()
 // renderColonyInventory()
 // renderMineralSelector()
 // renderSpaceCart()
+
+
+/* -------------------------------------- */
+/* test for governor manager */
+import { GovernorManager } from "./managers/GovernorManager.js"
+console.log(await GovernorManager())
