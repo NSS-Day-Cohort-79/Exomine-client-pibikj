@@ -25,7 +25,9 @@ export const renderMineralSelector = async () => {
                 if (facilityMineral.stock === 0) {
                     return ""
                 } else {
-                    return `<input type="radio" name="facilitymineral" data-mineralid="${facilityMineral.mineralId}" data-facilityActive="true" data-facilityName="${facilityMineral.facility.name}" data-mineralName="${facilityMineral.mineral.name}" id="${facilityMineral.id}" /> ${facilityMineral.stock} tons of ${facilityMineral.mineral.name}`
+                    let disabled = ""
+                    if (!facilityMineral.facility.isActive) {disabled = "disabled"}
+                    return `<input ${disabled} type="radio" name="facilitymineral" data-mineralid="${facilityMineral.mineralId}" data-facilityActive="${facilityMineral.facility.isActive}" data-facilityName="${facilityMineral.facility.name}" data-mineralName="${facilityMineral.mineral.name}" id="${facilityMineral.id}" /> ${facilityMineral.stock} tons of ${facilityMineral.mineral.name}`
                 }
             }
         )
