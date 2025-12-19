@@ -3,9 +3,9 @@ import { renderMineralSelector } from "./FacilityMineralSelector.js"
 import { renderColonyInventory } from "./ColonyInventory.js"
 
 
-const handlePurchaseMinerals = (clickEvent) => {
+const handlePurchaseMinerals = async (clickEvent) => {
     if (clickEvent.target.disabled === false && clickEvent.target.id === "purchase-button") {
-        purchaseMinerals()
+        await purchaseMinerals()
         renderColonyInventory()
         renderSpaceCart()
         renderMineralSelector()

@@ -1,13 +1,13 @@
 import { getFacilities } from "../managers/FacilityManager.js"
 import { setFacilityId } from "../utilities/TransientState.js"
-// import { renderMineralSelector } from "../components/FacilityMineralSelector.js"
+import { renderMineralSelector } from "../components/FacilityMineralSelector.js"
 
 // add "change" event listener
 document.addEventListener("change", (event) => {
     if (event.target.id === "facility-selector") {
         const selectedId = parseInt(event.target.value)
         setFacilityId(selectedId)
-        // renderMineralSelector()
+        renderMineralSelector()
     }
 })
 

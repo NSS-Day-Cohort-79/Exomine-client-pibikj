@@ -1,9 +1,8 @@
 import { GovernorSelector } from "./components/GovernorSelector.js"
 import { FacilitySelector } from "./components/FacilitySelector.js"
+import { renderColonyInventory } from "./components/ColonyInventory.js"
 import { renderMineralSelector } from "./components/FacilityMineralSelector.js"
 import { renderSpaceCart } from "./components/SpaceCart.js"
-// import render facility mineral selector
-// import render space cart
 
 const mainContainer = document.querySelector("#container")
 
@@ -48,8 +47,8 @@ const ExomineHTML = async () => {
 const renderMain = async () => {
     mainContainer.innerHTML = await ExomineHTML()
     renderColonyInventory()
-    // renderMineralSelector()
-    // renderSpaceCart()
+    renderMineralSelector()
+    renderSpaceCart()
 }
 
 renderMain()
