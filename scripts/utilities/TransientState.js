@@ -1,4 +1,4 @@
-// import { purchaseMineralsManager } from "./PurchaseManager.js"
+import { purchaseMineralsManager } from "../managers/PurchaseManager.js"
 
 const state = {
     mineralId: 0,
