@@ -1,21 +1,21 @@
 import { getFacilityMinerals } from "../managers/FacilityManager.js"
-import { getFacilityId, setFacilityId } from "../utilities/TransientState.js"
+import { getFacilityId, setFacilityId, setMineralId } from "../utilities/TransientState.js"
 import { renderSpaceCart } from "./SpaceCart.js"
 
 
 const handleFacilityMineralOption = (changeEvent) => {
     const itemChanged = changeEvent.target
-    if (itemChanged.dataset.facilityActive === "true") {
-        setMineralId(itemChanged.mineral.id)
-        renderSpaceCart(itemChanged.mineral.name, itemChanged.facility.name)
+    if (itemChanged.dataset.facilityactive === "true") {
+        setMineralId(parseInt(itemChanged.dataset.mineralid))
+        renderSpaceCart(itemChanged.dataset.mineralname, itemChanged.dataset.facilityname)
     }
 }
 
-document.addEventListener("change", handleFacilityMineralOption)
 
 export const renderMineralSelector = async () => {
+    document.addEventListener("change", handleFacilityMineralOption)
     const mineralListId = document.querySelector("#renderFacilityMineralSelector")
-    setFacilityId(1)
+    //setFacilityId(1)
     const facilityId = getFacilityId()
     let html = "<h2>Facility Minerals</h2>"
 
@@ -26,7 +26,7 @@ export const renderMineralSelector = async () => {
                 if (facilityMineral.stock === 0) {
                     return ""
                 } else {
-                    return `<input type="radio" name="facilityMineral" data-facilityActive="true" id="${facilityMineral.id}" /> ${facilityMineral.mineral.name}`
+                    return `<input type="radio" name="facilitymineral" data-mineralid="${facilityMineral.mineralId}" data-facilityActive="true" data-facilityName="${facilityMineral.facility.name}" data-mineralName="${facilityMineral.mineral.name}" id="${facilityMineral.id}" /> ${facilityMineral.mineral.name}`
                 }
             }
         )

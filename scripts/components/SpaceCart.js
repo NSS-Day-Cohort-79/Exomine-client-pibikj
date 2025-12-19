@@ -1,13 +1,13 @@
 import { purchaseMinerals } from "../utilities/TransientState.js"
 import { renderMineralSelector } from "./FacilityMineralSelector.js"
-// import { renderColonyInventory } from "./ColonyInventory.js"
+import { renderColonyInventory } from "./ColonyInventory.js"
 
 
 const handlePurchaseMinerals = (clickEvent) => {
     if (clickEvent.target === "enable") {
         purchaseMinerals()
         renderMineralSelector()
-       // renderColonyInventory()
+        renderColonyInventory()
         renderSpaceCart()
     }
 }
@@ -17,14 +17,14 @@ export const renderSpaceCart = (mineralName, facilityName) => {
     document.addEventListener("click", handlePurchaseMinerals)
     const spaceCart = document.querySelector("#renderSpaceCart")
 
-    let html = ""
+    let html = "<h2>Space Cart</h2>"
 
-    if (mineralName !== null) {
+    if (mineralName !== undefined) {
         html += `<div id="spaceCartItem">
                 <p>1 ton of ${mineralName} from ${facilityName}</p>
         </div>
         <button id="purchase-button" enable>Purchase Mineral</button>`
-    } else if (mineralName === null) {
+    } else if (mineralName === undefined) {
         html += `<button id="purchase-button" disable>Purchase Mineral</button>`
     }
 

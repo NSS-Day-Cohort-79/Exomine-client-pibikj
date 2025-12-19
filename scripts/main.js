@@ -37,7 +37,7 @@ const ExomineHTML = () => {
         </section>
         <section class='space-cart right'>
             <div id='renderSpaceCart' class='cart'>
-            <h2>Space Cart</h2>
+            
                 *** render SPACE CART ***
             </div>
         </section>
