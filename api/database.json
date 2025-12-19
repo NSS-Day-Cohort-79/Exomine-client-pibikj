@@ -140,7 +140,7 @@
     {
       "facilityId": 1,
       "mineralId": 2,
-      "stock": 28,
+      "stock": 27,
       "id": 2
     },
     {
@@ -170,7 +170,7 @@
     {
       "facilityId": 4,
       "mineralId": 7,
-      "stock": 96,
+      "stock": 95,
       "id": 7
     },
     {
@@ -252,6 +252,18 @@
       "mineralId": 3,
       "stock": 1,
       "id": 10
+    },
+    {
+      "colonyId": 3,
+      "mineralId": 7,
+      "stock": 1,
+      "id": 11
+    },
+    {
+      "colonyId": 4,
+      "mineralId": 2,
+      "stock": 1,
+      "id": 12
     }
   ]
 }
