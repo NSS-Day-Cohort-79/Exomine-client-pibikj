@@ -16,6 +16,11 @@ console.log(PurchaseMineralsManager(state))
 import { getColonyMineral } from "./managers/ColonyManager.js"
 console.log(getColonyMineral())
 
+import { getFacilityMinerals } from "./managers/FacilityManager.js"
+import { getFacility } from "./managers/FacilityManager.js"
+console.log(await getFacilityMinerals(1))
+console.log(await getFacility(1))
+
 const mainContainer = document.querySelector("#container")
 
 const ExomineHTML = () => {
