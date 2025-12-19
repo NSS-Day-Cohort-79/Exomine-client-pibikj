@@ -1,14 +1,14 @@
 // import governor selector
-// import facility selector
+import { FacilitySelector, enableFacilitySelector } from "./components/FacilitySelector.js"
 // import render colony inventory
 // import render facility mineral selector
 // import render space cart
 
 const mainContainer = document.querySelector("#container")
 
-const ExomineHTML = () => {
+const ExomineHTML = async () => {
     // const governorSelectorHTML = GovernorSelector()
-    // const facilitySelectorHTML = FacilitySelector()
+    const facilitySelectorHTML = await FacilitySelector()
 
     return `
     <header><h1>Solar System Mining Marketplace</h1></header>
@@ -19,7 +19,7 @@ const ExomineHTML = () => {
                 *** GOVERNOR SELECTOR ***
             </div>
             <div class='selector--fac div-govfac'>
-                *** FACILITY SELECTOR ***
+                ${facilitySelectorHTML}
             </div>
         </section>
         <section class='inv-colony right'>
@@ -45,8 +45,9 @@ const ExomineHTML = () => {
     `
 }
 
-const renderMain = () => {
-    mainContainer.innerHTML = ExomineHTML()
+const renderMain = async () => {
+    mainContainer.innerHTML = await ExomineHTML()
+    enableFacilitySelector()
 }
 
 renderMain()
@@ -54,23 +55,4 @@ renderMain()
 // renderColonyInventory()
 // renderMineralSelector()
 // renderSpaceCart()
-
-
-/* -------------------------------------- */
-/* test for TransientState */
-// run serve and json-server
-// check that console log matches the input to the setters
-// check that colonyMinerals gets updated stock and that facilityMinerals gets updated stock
-import { setColonyId, setMineralId, setFacilityId, purchaseMinerals, getColonyId, getMineralId, getFacilityId } from "./utilities/TransientState.js"
-const test = async () => {
-setColonyId(1)
-console.log(getColonyId())
-setMineralId(1)
-console.log(getMineralId())
-setFacilityId(1)
-console.log(getFacilityId())
-await purchaseMinerals()
-console.log(getMineralId())
-}
-test()
 
