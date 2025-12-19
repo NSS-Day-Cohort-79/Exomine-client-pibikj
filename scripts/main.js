@@ -1,6 +1,7 @@
 // import governor selector
 // import facility selector
-import { renderColonyInventory } from "./components/ColonyInventory.js"
+import { renderMineralSelector } from "./components/FacilityMineralSelector.js"
+import { renderSpaceCart } from "./components/SpaceCart.js"
 // import render facility mineral selector
 // import render space cart
 
@@ -31,11 +32,12 @@ const ExomineHTML = () => {
     <article id='MinSelCart' class='bottom'>
         <section class='selector-mineral left'>
             <div id='renderFacilityMineralSelector' class='selector--min'>
-                *** render MINERAL SELECTOR ***
+                
             </div>
         </section>
         <section class='space-cart right'>
             <div id='renderSpaceCart' class='cart'>
+            <h2>Space Cart</h2>
                 *** render SPACE CART ***
             </div>
         </section>
@@ -45,12 +47,13 @@ const ExomineHTML = () => {
 
 const renderMain = async () => {
     mainContainer.innerHTML = await ExomineHTML()
-    renderColonyInventory()
+    renderMineralSelector()
+    renderSpaceCart()
 }
 
 renderMain()
 
-// renderMineralSelector()
+// renderColonyInventory()
 // renderSpaceCart()
 
 
