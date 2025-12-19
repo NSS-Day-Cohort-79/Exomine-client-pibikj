@@ -1,6 +1,6 @@
 // import governor selector
 import { FacilitySelector, enableFacilitySelector } from "./components/FacilitySelector.js"
-// import render colony inventory
+import { renderColonyInventory } from "./components/ColonyInventory.js"
 // import render facility mineral selector
 // import render space cart
 
@@ -24,7 +24,6 @@ const ExomineHTML = async () => {
         </section>
         <section class='inv-colony right'>
             <div id='renderColonyMinerals'>
-                *** render COLONY MINERALS ***
             </div>
         </section>
     </article>
@@ -40,19 +39,21 @@ const ExomineHTML = async () => {
                 *** render SPACE CART ***
             </div>
         </section>
-        
     </article>
     `
 }
 
-const renderMain = async () => {
-    mainContainer.innerHTML = await ExomineHTML()
+const renderMain = async async () => {
+    mainContainer.innerHTML = await await ExomineHTML()
+    renderColonyInventory()
     enableFacilitySelector()
 }
 
 renderMain()
 
-// renderColonyInventory()
 // renderMineralSelector()
 // renderSpaceCart()
+
+
+/* -------------------------------------- */
 
