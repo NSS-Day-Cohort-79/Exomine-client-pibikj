@@ -134,6 +134,8 @@ Title: Event - a mineral from an active facility is selected
 
 FacilityMineralSelector->>transientState: setMineralId(id)
 FacilityMineralSelector->>SpaceCart: renderSpaceCart()
+SpaceCart->>TransientState: invoke getCart()
+TransientState-->>SpaceCart: return sate.cart
 note over SpaceCart: build SpaceCart html w/ enabled button
 SpaceCart->>DOM: get "SpaceCart" element by ID
 DOM-->>SpaceCart: return SpaceCart element
@@ -149,12 +151,18 @@ sequenceDiagram
 Title: Event - Purchase Minerals button is clicked
 
 SpaceCart->>TransientState: purchaseMinerals()
-TransientState->>PurchaseManager: PurchaseMineralsManager()
-PurchaseManager->>api: PUT/POST
-TransientState->>TransientState: setMineralId(0)
+    TransientState->>PurchaseManager: invoke PurchaseCart(state)
+    loop loop through cart
+        PurchaseManager->>PurchaseManager: invoke PurchaseMineralsManager(purchase)
+            PurchaseManager->>api: PUT/POST
+    end
+    TransientState->>TransientState: invoke emptyCart()
 SpaceCart->>FacilityMineralSelector: renderMineralSelector()
 SpaceCart->>ColonyInventory: renderColonyInventory()
 SpaceCart->>SpaceCart: renderSpaceCart()
+SpaceCart->>TransientState: invoke getCart()
+TransientState-->>SpaceCart: return sate.cart
+SpaceCart->>SpaceCart: Build Space Cart HTML
 SpaceCart->>DOM: get "SpaceCart" element by ID
 DOM-->>SpaceCart: return SpaceCart element
 SpaceCart->>DOM: set innerHTMl of "SpaceCart" element 
