@@ -25,6 +25,7 @@ export const addToCart = (mineralId) => {
         })
     }
 }
+export const getCart = () => structuredClone(state.cart)
 export const emptyCart = () => state.cart = []
 
 export const purchaseMinerals = async () => {

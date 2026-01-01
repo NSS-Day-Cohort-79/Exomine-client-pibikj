@@ -1,6 +1,8 @@
-import { purchaseMinerals } from "../utilities/TransientState.js"
+import { emptyCart, getCart, purchaseMinerals } from "../utilities/TransientState.js"
 import { renderMineralSelector } from "./FacilityMineralSelector.js"
 import { renderColonyInventory } from "./ColonyInventory.js"
+import { getFacility } from "../managers/FacilityManager.js"
+import { getMineral } from "../managers/MineralManager.js"
 
 
 const handlePurchaseMinerals = async (clickEvent) => {
@@ -10,23 +12,38 @@ const handlePurchaseMinerals = async (clickEvent) => {
         renderSpaceCart()
         renderMineralSelector()
     }
+    if (clickEvent.target.id === "empty-cart-button") {
+        emptyCart()
+        renderSpaceCart()
+        renderMineralSelector()
+    }
 }
 
 
-export const renderSpaceCart = (mineralName, facilityName) => {
+export const renderSpaceCart = async () => {
     document.addEventListener("click", handlePurchaseMinerals)
-    const spaceCart = document.querySelector("#renderSpaceCart")
+    const spaceCartEl = document.querySelector("#renderSpaceCart")
+    let cart = getCart()
 
     let html = "<h2>Space Cart</h2>"
+    
+    for (const item of cart) {
+        const facility = await getFacility(item.facilityId)
+        const mineral = await getMineral(item.mineralId)
+        html += `
+            <div id="spaceCartItem">
+                ${item.qty} tons of ${mineral.name} from ${facility.name}
+            </div>
+        `
+    }
 
-    if (mineralName !== undefined) {
-        html += `<div id="spaceCartItem">
-                <p>1 ton of ${mineralName} from ${facilityName}</p>
-        </div>
-        <button id="purchase-button">Purchase Mineral</button>`
-    } else if (mineralName === undefined) {
+    if (cart.length) {
+        html += `<button id="purchase-button">Purchase Mineral</button>`
+    } else {
         html += `<button id="purchase-button" disabled>Purchase Mineral</button>`
     }
 
-    spaceCart.innerHTML = html
+    html += `<br><button id="empty-cart-button">Empty Cart</button>`
+
+    spaceCartEl.innerHTML = html
 }

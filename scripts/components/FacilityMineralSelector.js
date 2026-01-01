@@ -7,7 +7,7 @@ const handleFacilityMineralOption = (changeEvent) => {
     const itemChanged = changeEvent.target
     if (itemChanged.dataset.facilityactive === "true") {
         addToCart(parseInt(itemChanged.dataset.mineralid))
-        renderSpaceCart(itemChanged.dataset.mineralname, itemChanged.dataset.facilityname)
+        renderSpaceCart()
     }
 }
 

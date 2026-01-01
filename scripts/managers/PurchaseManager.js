@@ -20,7 +20,7 @@ export const PurchaseMineralsManager = async (colonyId, purchaseItem) => {
         const newColonyMineral = {
             colonyId: colonyId,
             mineralId: purchaseItem.mineralId,
-            stock: 1
+            stock: purchaseItem.qty
         }
         // POST entry to colonyMinerals
         const newColonyResponse = await fetch("http://localhost:8088/colonyMinerals", {
