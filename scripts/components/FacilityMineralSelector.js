@@ -1,12 +1,12 @@
 import { getFacilityMinerals } from "../managers/FacilityManager.js"
-import { getFacilityId, setMineralId } from "../utilities/TransientState.js"
+import { getFacilityId, addToCart } from "../utilities/TransientState.js"
 import { renderSpaceCart } from "./SpaceCart.js"
 
 
 const handleFacilityMineralOption = (changeEvent) => {
     const itemChanged = changeEvent.target
     if (itemChanged.dataset.facilityactive === "true") {
-        setMineralId(parseInt(itemChanged.dataset.mineralid))
+        addToCart(parseInt(itemChanged.dataset.mineralid))
         renderSpaceCart(itemChanged.dataset.mineralname, itemChanged.dataset.facilityname)
     }
 }
