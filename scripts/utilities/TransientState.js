@@ -29,5 +29,5 @@ export const emptyCart = () => state.cart = []
 
 export const purchaseMinerals = async () => {
     await PurchaseCart(structuredClone(state))
-    state.mineralId = 0
+    emptyCart()
 }
