@@ -1,6 +1,7 @@
 import { getFacilities } from "../managers/FacilityManager.js"
 import { setFacilityId } from "../utilities/TransientState.js"
 import { renderMineralSelector } from "../components/FacilityMineralSelector.js"
+import { renderSpaceCart } from "../components/SpaceCart.js"
 
 // add "change" event listener
 document.addEventListener("change", (event) => {
@@ -8,6 +9,7 @@ document.addEventListener("change", (event) => {
         const selectedId = parseInt(event.target.value)
         setFacilityId(selectedId)
         renderMineralSelector()
+        renderSpaceCart()
     }
 })
 
