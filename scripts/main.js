@@ -1,14 +1,14 @@
-// import governor selector
-// import facility selector
+import { GovernorSelector } from "./components/GovernorSelector.js"
+import { FacilitySelector } from "./components/FacilitySelector.js"
 import { renderColonyInventory } from "./components/ColonyInventory.js"
-// import render facility mineral selector
-// import render space cart
+import { renderMineralSelector } from "./components/FacilityMineralSelector.js"
+import { renderSpaceCart } from "./components/SpaceCart.js"
 
 const mainContainer = document.querySelector("#container")
 
-const ExomineHTML = () => {
-    // const governorSelectorHTML = GovernorSelector()
-    // const facilitySelectorHTML = FacilitySelector()
+const ExomineHTML = async () => {
+    const governorSelectorHTML = await GovernorSelector()
+    const facilitySelectorHTML = await FacilitySelector()
 
     return `
     <header><h1>Solar System Mining Marketplace</h1></header>
@@ -16,10 +16,10 @@ const ExomineHTML = () => {
     <article id='GovFacSelector' class='selector-drop-down'>
         <section class='selector-govfac left'>
             <div class='selector--gov div-govfac'>
-                *** GOVERNOR SELECTOR ***
+                ${governorSelectorHTML}
             </div>
             <div class='selector--fac div-govfac'>
-                *** FACILITY SELECTOR ***
+                ${facilitySelectorHTML}
             </div>
         </section>
         <section class='inv-colony right'>
@@ -31,11 +31,12 @@ const ExomineHTML = () => {
     <article id='MinSelCart' class='bottom'>
         <section class='selector-mineral left'>
             <div id='renderFacilityMineralSelector' class='selector--min'>
-                *** render MINERAL SELECTOR ***
+                
             </div>
         </section>
         <section class='space-cart right'>
             <div id='renderSpaceCart' class='cart'>
+            
                 *** render SPACE CART ***
             </div>
         </section>
@@ -46,13 +47,8 @@ const ExomineHTML = () => {
 const renderMain = async () => {
     mainContainer.innerHTML = await ExomineHTML()
     renderColonyInventory()
+    renderMineralSelector()
+    renderSpaceCart()
 }
 
 renderMain()
-
-// renderMineralSelector()
-// renderSpaceCart()
-
-
-/* -------------------------------------- */
-
