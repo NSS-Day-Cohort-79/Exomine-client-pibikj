@@ -4,40 +4,43 @@ Let colonies purchase minerals from mining facilities.
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+The Solar System Mineral Marketplace is an application designed to facilitate mineral purchases among the colonies. By providing the most up-to-date colony and facility mineral data, purchase minerals with confidence!
 
 ## Getting Started
 
 ### Dependencies
 
-* Node
-* JSON server
+* [Node.js](https://nodejs.org/en)
+* [JSON server](https://www.npmjs.com/package/json-server)
 
 ### Installing
 
 * [Exomine - Mining Marketplace](https://github.com/NSS-Day-Cohort-79/Exomine-client-pibikj)
-* Clone the repository
+* [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the repository
 * In terminal - access the repository directory
-* Any modifications needed to be made to files/folders
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+* Open two new tabs in your terminal  
+
+    * In the first tab, `cd api`, then run the following command - 
+        ```
+        json-server -p 8088 -w database.json
+        ```
+    * In the second tab, run the `serve` command
+        * In your browser, paste the local address
+        ```
+        http://localhost:3000
+        ```
+![](./images/ssmm-main.png)
+
+
 
 ## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+Please contact the authors below to report issues with the program.
 
 ## Authors
-
-Contributors names and contact info
 
 * [Cory Drumright](https://github.com/cmdrumright)
 * [Jack Gardner](https://github.com/jackgardner99)
@@ -45,11 +48,10 @@ Contributors names and contact info
 
 ## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+* 1.0
+    * Order minerals for the colony, 1 ton at a time, one facility at a time.
+* 1.1
+    * Order multiple minerals from multiple facilities in one purchase!
 
 ## License
 
