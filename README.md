@@ -53,9 +53,6 @@ Please contact the authors below to report issues with the program.
 * 1.1
     * Order multiple minerals from multiple facilities in one purchase!
 
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
