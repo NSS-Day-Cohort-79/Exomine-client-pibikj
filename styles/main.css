@@ -21,7 +21,8 @@ section {
 /* drop-downs */
 
 .div-govfac {
-    height: 40%;
+    height: 30%;
+    margin-top: 2rem;
 }
 
 /* -------------------------------- */
@@ -51,12 +52,12 @@ article {
 
 /* -------------------------------- */
 
-/* VISUALIZATION BOXES */
+/* VISUALIZATION BOXES 
 section {
     border: 3px red solid;
 }
 div {
     border: 3px blue solid;
-}
+} */
 
 /* -------------------------------- */
